@@ -11,7 +11,7 @@ function Navbar() {
           style={{ backgroundImage: `url(${logo.src})` }}
         ></div>
         <div className="connect">
-          <Button colorScheme="messenger" fontSize="2rem" height="45px">
+          <Button colorScheme="messenger" fontSize="2rem" height="45px" className="connect-btn">
             Connect
           </Button>
         </div>

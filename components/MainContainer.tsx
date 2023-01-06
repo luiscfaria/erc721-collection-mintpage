@@ -8,13 +8,12 @@ function MainContainer() {
       <div className="info-container">
         <h1>MINT NOW</h1>
         <h1>FARIA COLLECTION</h1>
-        <h2 style={{ fontSize: "2rem", fontWeight: "900" }}>03/100 Minted</h2>
+        <h1>03/100 Minted</h1>
         <Button colorScheme="messenger" width={200} mt={4} mb={6}>
           Mint Now
         </Button>
         <div
           className="minting-details"
-          style={{ fontSize: "1.5rem", fontWeight: "700" }}
         >
           <div>0.001 ETH + gas prices</div>
           <div>MAX 2 NFTs per mint</div>
