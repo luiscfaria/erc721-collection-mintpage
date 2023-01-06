@@ -3,7 +3,7 @@ import React from "react";
 function Steps() {
   return (
     <div className="steps-container">
-      <div style={{ fontSize: "2.5rem", fontWeight: "900" }}>HOW TO MINT</div>
+      <h1>HOW TO MINT</h1>
       <div className="steps-box">
         <div className="step">
           <div className="step-number">1</div>

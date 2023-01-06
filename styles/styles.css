@@ -67,6 +67,11 @@
   /* outline: auto; */
 }
 
+.info-container h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
 .art-container {
   width: 47.5%;
   height: 100%;
@@ -95,6 +100,11 @@
   /* outline: auto; */
 }
 
+.steps-container h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
 .steps-box {
   margin-top: 1rem;
   display: flex;
@@ -113,7 +123,7 @@
   font-size: 4rem;
   font-weight: 900;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: #0063D1;
+  -webkit-text-stroke-color: #0063d1;
 }
 
 .step-text {
@@ -122,4 +132,93 @@
   width: 80%;
   margin-left: 1rem;
   /* outline: auto; */
+}
+
+@media (max-width: 1024px) {
+  .main-container {
+    width: 90%;
+    min-height: 400px;
+  }
+
+  .info-container {
+    min-height: 400px;
+  }
+
+  .info-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .art-container {
+    min-height: 400px;
+  }
+
+  .art {
+    min-height: 400px;
+  }
+
+  .steps-container {
+    width: 90%;
+  }
+
+  .steps-container h1 {
+    font-size: 2rem;
+  }
+
+  .step-number {
+    font-size: 3rem;
+  }
+
+  .step-text {
+    font-size: 1.5rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 800px) {
+  .main-container {
+    width: 90%;
+    min-height: 300px;
+  }
+
+  .info-container {
+    min-height: 300px;
+  }
+
+  .info-container h1 {
+    font-size: 2rem;
+  }
+
+  .art-container {
+    min-height: 300px;
+  }
+
+  .art {
+    min-height: 300px;
+  }
+
+  .steps-container {
+    width: 90%;
+  }
+
+  .steps-container h1 {
+    font-size: 1.5rem;
+  }
+
+  .step-number {
+    font-size: 3rem;
+  }
+
+  .step-text {
+    font-size: 1.1rem;
+    width: 80%;
+  }
+}
+
+@media (max-width: 640px) {
+}
+
+@media (max-width: 414px) {
+}
+
+@media (max-width: 320px) {
 }
