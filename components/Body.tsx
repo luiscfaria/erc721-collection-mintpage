@@ -1,21 +1,22 @@
-import * as React from 'react';
-import { ChakraProvider } from '@chakra-ui/react';
-import { extendTheme } from '@chakra-ui/react';
+import * as React from "react";
+import { ChakraProvider } from "@chakra-ui/react";
+import { extendTheme } from "@chakra-ui/react";
 
-import { useRouter } from 'next/router';
-import Navbar from './Navbar';
+import { useRouter } from "next/router";
+import Navbar from "./Navbar";
+import { UserContextProvider } from "../context/UserInfoContext";
 
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
   },
-  mainPurple: '#536DFE',
+  mainPurple: "#536DFE",
 };
 
 const activeLabelStyles = {
-  transform: 'scale(0.85) translateY(-24px)',
+  transform: "scale(0.85) translateY(-24px)",
 };
 
 export const theme = extendTheme({
@@ -30,7 +31,7 @@ export const theme = extendTheme({
                 ...activeLabelStyles,
               },
             },
-            'input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label':
+            "input:not(:placeholder-shown) + label, .chakra-select__wrapper + label, textarea:not(:placeholder-shown) ~ label":
               {
                 ...activeLabelStyles,
               },
@@ -38,13 +39,13 @@ export const theme = extendTheme({
               top: 0,
               left: 0,
               zIndex: 2,
-              position: 'absolute',
-              backgroundColor: 'white',
-              pointerEvents: 'none',
+              position: "absolute",
+              backgroundColor: "white",
+              pointerEvents: "none",
               mx: 3,
               px: 1,
               my: 2,
-              transformOrigin: 'left top',
+              transformOrigin: "left top",
             },
           },
         },
@@ -59,10 +60,12 @@ function MultipleProviderComponent(props: any) {
 
   return (
     <div>
+      <UserContextProvider>
         <ChakraProvider theme={theme}>
-              <Navbar />
-              <Component {...props} />
+          <Navbar />
+          <Component {...props} />
         </ChakraProvider>
+      </UserContextProvider>
     </div>
   );
 }
