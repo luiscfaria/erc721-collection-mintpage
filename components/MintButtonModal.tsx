@@ -8,27 +8,48 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import useMetamask from "../hooks/useMetamask";
-import { useDisclosure } from "@chakra-ui/react";
+import { useUserContext } from "../context/UserInfoContext";
 
 function MintButtonModal() {
+  const { userValues } = useUserContext();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { mintNFT } = useMetamask();
+  const { connectMetamask, mintNFT } = useMetamask();
   const price = 1000000000000000;
   const [selectedAmount, setSelectedAmount] = useState<number>(1);
+  
+  const handleMint = () => {
+    mintNFT(price, selectedAmount)
+    onClose()
+  }
+
   return (
     <>
-      <Button
-        colorScheme="messenger"
-        width={250}
-        mt={4}
-        mb={6}
-        onClick={onOpen}
-        fontSize="2rem"
-      >
-        Mint Now
-      </Button>
+      {userValues.address ? (
+        <Button
+          colorScheme="messenger"
+          width={250}
+          mt={4}
+          mb={6}
+          onClick={onOpen}
+          fontSize="2rem"
+        >
+          Mint Now
+        </Button>
+      ) : (
+        <Button
+          colorScheme="messenger"
+          width={250}
+          mt={4}
+          mb={6}
+          onClick={connectMetamask}
+          fontSize="2rem"
+        >
+          Mint Now
+        </Button>
+      )}
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -55,11 +76,13 @@ function MintButtonModal() {
           </ModalBody>
 
           <ModalFooter>
-            <Button variant="ghost" onClick={onClose}>Cancel</Button>
+            <Button variant="ghost" onClick={onClose}>
+              Cancel
+            </Button>
             <Button
               colorScheme="blue"
               mr={3}
-              onClick={() => mintNFT(price, selectedAmount)}
+              onClick={handleMint}
             >
               Mint
             </Button>

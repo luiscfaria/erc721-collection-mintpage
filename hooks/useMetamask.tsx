@@ -75,8 +75,6 @@ function useMetamask() {
   }
 
   const mintNFT = async (price: number, mintAmount: number) => {
-    console.log('aa')
-
     const { signer } = await getSigner();
 
     if (!signer) {
