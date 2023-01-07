@@ -11,7 +11,7 @@ This is project of an NFT MintPage
 
 ### Links
 
-- Live Site URL: 
+- Live Site URL: http://luiscfaria.github.io/erc721-collection-mintpage
 
 ## Technologies
 
